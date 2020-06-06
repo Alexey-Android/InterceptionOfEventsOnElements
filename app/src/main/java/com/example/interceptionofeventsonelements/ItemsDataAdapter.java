@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,7 +96,7 @@ public class ItemsDataAdapter extends BaseAdapter {
     // Если нет чего переиспользовать, то создается новый View.
     // А потом напоняет старую или новую View нужными данными.
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View view = convertView;
         if (view == null) {
             view = inflater.inflate(R.layout.item_list_view, parent, false);
@@ -116,7 +117,15 @@ public class ItemsDataAdapter extends BaseAdapter {
       //  checkBox.setOnCheckedChangeListener(myCheckChangeList);
         button.setTag(position);
         //checkBox.setChecked(itemData.isChecked());
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(v.getContext(), "Hi", Toast.LENGTH_SHORT).show();
+                removeItem(position);
+            }
+        });
 
         return view;
     }
+
 }

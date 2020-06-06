@@ -4,14 +4,9 @@ import android.widget.Button;
 
 public class ItemData {
 
-
-
     private Drawable image;
     private String title;
     private String subtitle;
-
-
-
     //private boolean checked;
     private Button button;
 

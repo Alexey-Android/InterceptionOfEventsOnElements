@@ -32,10 +32,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         FloatingActionButton fab = findViewById(R.id.fab);
         ListView listView = findViewById(R.id.listView);
-        //android.widget.Button button = findViewById(R.id.button);
 
         fillImages();
 
@@ -62,16 +60,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // При долгом тапе по элементу списка будем удалять его
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+      /*  listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 adapter.removeItem(position);
                 return true;
             }
-        });
-
-
-
+        });*/
     }
 
     // Заполним различными картинками, которые встроены в сам Android
@@ -93,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 images.get(random.nextInt(images.size())),
                 "Hello" + adapter.getCount(),
                 "It\'s me", (android.widget.Button) Button));
-                /*random.nextBoolean()*/
     }
 
     // Покажем сообщение с данными
