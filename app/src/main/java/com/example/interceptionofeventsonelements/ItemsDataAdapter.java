@@ -28,15 +28,6 @@ public class ItemsDataAdapter extends BaseAdapter {
     // layout-файла создает View-элемент.
     private LayoutInflater inflater;
 
-    // Слушает все изменения галочки и меняет
-    // состояние конкретного ItemData
-   /* private CompoundButton.OnCheckedChangeListener myCheckChangeList
-            = new CompoundButton.OnCheckedChangeListener() {
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            items.get((Integer) buttonView.getTag()).setChecked(isChecked);
-        }
-    };*/
-
     // Конструктор, в который передается контекст
     // для создания контролов из XML. И первоначальный список элементов.
     ItemsDataAdapter(Context context, List<ItemData> items) {
@@ -107,20 +98,15 @@ public class ItemsDataAdapter extends BaseAdapter {
         ImageView image = view.findViewById(R.id.icon);
         TextView title = view.findViewById(R.id.title);
         TextView subtitle = view.findViewById(R.id.subtitle);
-        //CheckBox checkBox = view.findViewById(R.id.checkbox);
         Button button = view.findViewById(R.id.button);
 
         image.setImageDrawable(itemData.getImage());
         title.setText(itemData.getTitle());
         subtitle.setText(itemData.getSubtitle());
-       // button.setText((CharSequence) itemData.getButton());
-      //  checkBox.setOnCheckedChangeListener(myCheckChangeList);
         button.setTag(position);
-        //checkBox.setChecked(itemData.isChecked());
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(v.getContext(), "Hi", Toast.LENGTH_SHORT).show();
                 removeItem(position);
             }
         });

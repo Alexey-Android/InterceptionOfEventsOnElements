@@ -1,18 +1,13 @@
 package com.example.interceptionofeventsonelements;
 
-
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -26,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     // Список картинок, которые мы будем брать для нашего списка
     private List<Drawable> images = new ArrayList<>();
     private Object Button;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +53,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // При долгом тапе по элементу списка будем удалять его
-      /*  listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                adapter.removeItem(position);
-                return true;
-            }
-        });*/
     }
 
     // Заполним различными картинками, которые встроены в сам Android
@@ -87,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
         adapter.addItem(new ItemData(
                 images.get(random.nextInt(images.size())),
                 "Hello" + adapter.getCount(),
-                "It\'s me", (android.widget.Button) Button));
+                "It\'s me",
+                (android.widget.Button) Button));
+
     }
 
     // Покажем сообщение с данными
