@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private ItemsDataAdapter adapter;
     // Список картинок, которые мы будем брать для нашего списка
     private List<Drawable> images = new ArrayList<>();
-    private Object Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addItem(new ItemData(
                 images.get(random.nextInt(images.size())),
                 "Hello" + adapter.getCount(),
-                "It\'s me",
-                (android.widget.Button) Button));
+                "It\'s me"));
 
     }
 
